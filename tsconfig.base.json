@@ -1,0 +1,30 @@
+/* TSConfig Reference https://www.typescriptlang.org/docs */
+{
+  /* File Inclusion */
+  "include": ["src"],
+  "compilerOptions": {
+    /* Project Options */
+    "importHelpers": true,
+    "isolatedModules": true,
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "lib",
+    "removeComments": true,
+    "target": "ES5",
+    /* Strict Checks */
+    "strict": true,
+    /* Module Resolution */
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    /* Linter Checks */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    /* Advanced */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  }
+}
