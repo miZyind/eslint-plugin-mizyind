@@ -1,13 +1,9 @@
 import kebabCase from 'lodash.kebabcase';
 import { basename, dirname, extname, resolve } from 'path';
 
-import { ESLintUtils } from '@typescript-eslint/experimental-utils';
+import { createRule } from '../utils/create-rule';
 
-export default ESLintUtils.RuleCreator(
-  // TODO: Extract function for this
-  (name) =>
-    `https://github.com/miZyind/eslint-plugin-mizyind/docs/rules/${name}.md`,
-)({
+export default createRule({
   name: 'filename',
   meta: {
     type: 'problem',
