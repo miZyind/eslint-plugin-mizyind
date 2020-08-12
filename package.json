@@ -14,9 +14,12 @@
     "lint": "eslint \"src/**/*.ts\" --max-warnings 0",
     "test": "jest"
   },
-  "main": "lib/index.js",
   "files": [
-    "lib"
+    "docs",
+    "lib",
+    "LICENSE",
+    "package.json",
+    "README.md"
   ],
   "keywords": [
     "eslint",
