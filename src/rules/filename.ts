@@ -3,7 +3,11 @@ import { basename, dirname, extname, resolve } from 'path';
 
 import { ESLintUtils } from '@typescript-eslint/experimental-utils';
 
-export default ESLintUtils.RuleCreator((name) => name)({
+export default ESLintUtils.RuleCreator(
+  // TODO: Extract function for this
+  (name) =>
+    `https://github.com/miZyind/eslint-plugin-mizyind/docs/rules/${name}.md`,
+)({
   name: 'filename',
   meta: {
     type: 'problem',

@@ -45,7 +45,7 @@ Add `mizyind` to the plugins section of your ESLint configuration, then configur
 
 | Name                                           | Description                        |
 |------------------------------------------------|------------------------------------|
-| [`mizyind/filename`](./docs/rules/filename.md) | Enforces files' naming conventions |
+| [`mizyind/filename`](docs/rules/filename.md)   | Enforces files' naming conventions |
 
 ## Author
 
