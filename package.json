@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-mizyind",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This package provides miZyind's custom lint.",
   "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
   "author": "miZyind <mizyind@gmail.com>",
@@ -10,6 +10,7 @@
     "url": "https://github.com/miZyind/eslint-plugin-mizyind/issues"
   },
   "scripts": {
+    "prepare": "yarn build",
     "build": "rimraf lib && tsc --build tsconfig.base.json",
     "lint": "eslint \"src/**/*.ts\" --max-warnings 0",
     "test": "jest"
