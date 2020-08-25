@@ -3,6 +3,11 @@ import kebabCase from 'lodash.kebabcase';
 import { basename, dirname, extname, resolve } from 'path';
 
 import { createRule } from '../utils/create-rule';
+import { hasValue } from '../utils/type-guard';
+
+export const enum Message {
+  DoesNotMatchStandard = 'DoesNotMatchStandard',
+}
 
 export default createRule({
   name: 'filename',
@@ -14,59 +19,68 @@ export default createRule({
       recommended: 'error',
     },
     messages: {
-      doesNotMatchStandard: `Filename '{{original}}' should be '{{standard}}'`,
+      [Message.DoesNotMatchStandard]: `Filename '{{original}}' should be '{{standard}}'`,
     },
     schema: [],
   },
   defaultOptions: [],
   create(context) {
     const filenameWithPath = context.getFilename();
-    const strictDirList = [
-      { dir: 'entities', suffix: 'entity' },
-      { dir: 'dtos', suffix: 'dto' },
-      { dir: 'responses', suffix: 'response' },
+    const specialDirList = [
+      // NextJS
+      { name: 'pages', whitelist: ['_app', '_document'] },
+      // NestJS
+      { name: 'entities', suffix: 'entity' },
+      { name: 'dtos', suffix: 'dto' },
+      { name: 'responses', suffix: 'response' },
     ];
 
     return {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       Program(node): void {
-        const parentDir = basename(dirname(resolve(filenameWithPath)));
+        const dirName = basename(dirname(resolve(filenameWithPath)));
         const ext = extname(filenameWithPath);
         const original = basename(filenameWithPath);
         const filenameWithoutExt = basename(filenameWithPath, ext);
         const [prefix, suffix] = filenameWithoutExt.split('.');
         const standardPrefix = kebabCase(prefix);
         const isValidPrefix = prefix === standardPrefix;
-        const hasSuffix = typeof suffix !== 'undefined';
+        const hasSuffix = hasValue(suffix);
         const standardSuffix = suffix?.toLowerCase() ?? '';
         const isValidSuffix =
-          !hasSuffix ||
-          (typeof suffix !== 'undefined' && suffix === suffix.toLowerCase());
-        const matchedParentDir = strictDirList.find(
-          ({ dir }) => dir === parentDir,
-        );
+          !hasSuffix || (hasSuffix && suffix === suffix.toLowerCase());
+        const specialDir = specialDirList.find(({ name }) => name === dirName);
 
-        if (typeof matchedParentDir !== 'undefined') {
-          const standardDirSuffix = matchedParentDir.suffix;
-          const isValid =
-            isValidPrefix && isValidSuffix && suffix === standardDirSuffix;
+        if (hasValue(specialDir)) {
+          if (
+            hasValue(specialDir.whitelist) &&
+            specialDir.whitelist.includes(prefix)
+          ) {
+            return;
+          }
 
-          if (!isValid) {
-            return context.report({
-              node,
-              messageId: 'doesNotMatchStandard',
-              data: {
-                original,
-                standard: `${standardPrefix}.${standardDirSuffix}${ext}`,
-              },
-            });
+          if (hasValue(specialDir.suffix)) {
+            const standardDirSuffix = specialDir.suffix;
+            const isValid =
+              isValidPrefix && isValidSuffix && suffix === standardDirSuffix;
+
+            if (!isValid) {
+              return context.report({
+                node,
+                messageId: Message.DoesNotMatchStandard,
+                data: {
+                  original,
+                  standard: `${standardPrefix}.${standardDirSuffix}${ext}`,
+                },
+              });
+            }
           }
         }
 
         if (isValidPrefix && !isValidSuffix) {
           return context.report({
             node,
-            messageId: 'doesNotMatchStandard',
+            messageId: Message.DoesNotMatchStandard,
             data: {
               original,
               standard: `${standardPrefix}.${standardSuffix}${ext}`,
@@ -77,7 +91,7 @@ export default createRule({
         if (!isValidPrefix && hasSuffix) {
           return context.report({
             node,
-            messageId: 'doesNotMatchStandard',
+            messageId: Message.DoesNotMatchStandard,
             data: {
               original,
               standard: `${standardPrefix}.${standardSuffix}${ext}`,
@@ -88,7 +102,7 @@ export default createRule({
         if (!isValidPrefix && !hasSuffix) {
           return context.report({
             node,
-            messageId: 'doesNotMatchStandard',
+            messageId: Message.DoesNotMatchStandard,
             data: {
               original,
               standard: `${standardPrefix}${ext}`,

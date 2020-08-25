@@ -1,6 +1,6 @@
 import { ESLintUtils } from '@typescript-eslint/experimental-utils';
 
-import rule from '../../src/rules/filename';
+import rule, { Message } from '../../src/rules/filename';
 
 const tester = new ESLintUtils.RuleTester({
   parser: '@typescript-eslint/parser',
@@ -16,6 +16,8 @@ tester.run('filename', rule, {
     { code, filename: '/entites/foo.entity.js' },
     { code, filename: '/dtos/foo.dto.js' },
     { code, filename: '/responses/foo.response.js' },
+    { code, filename: '/pages/_app.js' },
+    { code, filename: '/pages/_document.js' },
   ],
   invalid: [
     {
@@ -23,7 +25,7 @@ tester.run('filename', rule, {
       filename: 'fooBar.js',
       errors: [
         {
-          messageId: 'doesNotMatchStandard',
+          messageId: Message.DoesNotMatchStandard,
           data: { original: 'fooBar.js', standard: 'foo-bar.js' },
         },
       ],
@@ -33,7 +35,7 @@ tester.run('filename', rule, {
       filename: 'fooBar.constant.js',
       errors: [
         {
-          messageId: 'doesNotMatchStandard',
+          messageId: Message.DoesNotMatchStandard,
           data: {
             original: 'fooBar.constant.js',
             standard: 'foo-bar.constant.js',
@@ -46,7 +48,7 @@ tester.run('filename', rule, {
       filename: 'fooBar.error.js',
       errors: [
         {
-          messageId: 'doesNotMatchStandard',
+          messageId: Message.DoesNotMatchStandard,
           data: { original: 'fooBar.error.js', standard: 'foo-bar.error.js' },
         },
       ],
@@ -56,8 +58,18 @@ tester.run('filename', rule, {
       filename: '/entities/foo.js',
       errors: [
         {
-          messageId: 'doesNotMatchStandard',
+          messageId: Message.DoesNotMatchStandard,
           data: { original: 'foo.js', standard: 'foo.entity.js' },
+        },
+      ],
+    },
+    {
+      code,
+      filename: '/components/_app.js',
+      errors: [
+        {
+          messageId: Message.DoesNotMatchStandard,
+          data: { original: '_app.js', standard: 'app.js' },
         },
       ],
     },
