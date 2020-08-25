@@ -4,14 +4,6 @@ import { basename, dirname, extname, resolve } from 'path';
 
 import { createRule } from '../utils/create-rule';
 
-function splitPrefixAndSuffix(
-  filenameWithoutExt: string,
-): { prefix: string; suffix?: string } {
-  const [prefix, suffix] = filenameWithoutExt.split('.');
-
-  return { prefix, suffix };
-}
-
 export default createRule({
   name: 'filename',
   meta: {
@@ -42,7 +34,7 @@ export default createRule({
         const ext = extname(filenameWithPath);
         const original = basename(filenameWithPath);
         const filenameWithoutExt = basename(filenameWithPath, ext);
-        const { prefix, suffix } = splitPrefixAndSuffix(filenameWithoutExt);
+        const [prefix, suffix] = filenameWithoutExt.split('.');
         const standardPrefix = kebabCase(prefix);
         const isValidPrefix = prefix === standardPrefix;
         const hasSuffix = typeof suffix !== 'undefined';
