@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import kebabCase from 'lodash.kebabcase';
 import { basename, dirname, extname, resolve } from 'path';
 
@@ -41,14 +40,16 @@ export default createRule({
         const dirName = basename(dirname(resolve(filenameWithPath)));
         const ext = extname(filenameWithPath);
         const original = basename(filenameWithPath);
-        const filenameWithoutExt = basename(filenameWithPath, ext);
-        const [prefix, suffix] = filenameWithoutExt.split('.');
+        const [prefix, suffix] = basename(filenameWithPath, ext).split('.') as [
+          string,
+          string | undefined,
+        ];
         const standardPrefix = kebabCase(prefix);
         const isValidPrefix = prefix === standardPrefix;
         const hasSuffix = hasValue(suffix);
         const standardSuffix = suffix?.toLowerCase() ?? '';
         const isValidSuffix =
-          !hasSuffix || (hasSuffix && suffix === suffix.toLowerCase());
+          typeof suffix === 'undefined' || suffix === suffix.toLowerCase();
         const specialDir = specialDirList.find(({ name }) => name === dirName);
 
         if (hasValue(specialDir)) {
