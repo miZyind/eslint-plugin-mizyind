@@ -4,6 +4,26 @@ import { basename, dirname, extname, resolve } from 'path';
 import { createRule } from '../utils/create-rule';
 import { hasValue } from '../utils/type-guard';
 
+function replaceAll(input: string, search: string, replace: string): string {
+  return input.replace(new RegExp(search, 'gu'), replace);
+}
+
+function getStandardPrefix(
+  specialPrefixList: string[],
+  prefix: string,
+): string {
+  const mask = '0000000000';
+  const specialPrefix = specialPrefixList.find((sp) => prefix.includes(sp));
+
+  if (hasValue(specialPrefix)) {
+    const maskedPrefix = replaceAll(prefix, specialPrefix, mask);
+
+    return replaceAll(kebabCase(maskedPrefix), mask, specialPrefix);
+  }
+
+  return kebabCase(prefix);
+}
+
 export const enum Message {
   DoesNotMatchStandard = 'DoesNotMatchStandard',
 }
@@ -25,6 +45,7 @@ export default createRule({
   defaultOptions: [],
   create(context) {
     const filenameWithPath = context.getFilename();
+    const specialPrefixList = ['e2e'];
     const specialDirList = [
       // NextJS
       { name: 'pages', whitelist: ['_app', '_document'] },
@@ -44,7 +65,7 @@ export default createRule({
           string,
           string | undefined,
         ];
-        const standardPrefix = kebabCase(prefix);
+        const standardPrefix = getStandardPrefix(specialPrefixList, prefix);
         const isValidPrefix = prefix === standardPrefix;
         const hasSuffix = hasValue(suffix);
         const standardSuffix = suffix?.toLowerCase() ?? '';

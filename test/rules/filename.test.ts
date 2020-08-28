@@ -18,6 +18,8 @@ tester.run('filename', rule, {
     { code, filename: '/responses/foo.response.js' },
     { code, filename: '/pages/_app.js' },
     { code, filename: '/pages/_document.js' },
+    { code, filename: '/configs/e2e-test.js' },
+    { code, filename: '/configs/e2e-e2e-test.js' },
   ],
   invalid: [
     {
