@@ -55,7 +55,6 @@ export = {
     'wrap-iife': 'error',
     yoda: 'error',
     /* Variables [https://eslint.org/docs/rules/#variables] */
-    'no-shadow': 'error',
     'no-undef-init': 'error',
     'no-undefined': 'error',
     /* Stylistic Issues [https://eslint.org/docs/rules/#stylistic-issues] */
