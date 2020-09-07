@@ -148,6 +148,7 @@ export = {
         extendDefaults: false,
       },
     ],
+    '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/explicit-member-accessibility': [
       'error',
       { accessibility: 'no-public' },
