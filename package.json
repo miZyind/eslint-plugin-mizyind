@@ -42,6 +42,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-mizyind": "file:.",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
     "jest": "^26.4.2",
     "prettier": "^2.1.1",
     "rimraf": "^3.0.2",
@@ -81,5 +82,10 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
   }
 }
