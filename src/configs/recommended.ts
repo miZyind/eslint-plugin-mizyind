@@ -102,7 +102,6 @@ export = {
     'spaced-comment': ['error', 'always', { block: { balanced: true } }],
     /* ECMAScript 6 [https://eslint.org/docs/rules/#ecmascript-6] */
     'arrow-body-style': 'error',
-    'no-duplicate-imports': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-rename': 'error',
     'no-var': 'error',
@@ -148,7 +147,10 @@ export = {
         extendDefaults: false,
       },
     ],
-    '@typescript-eslint/consistent-type-imports': 'off',
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { disallowTypeAnnotations: false },
+    ],
     '@typescript-eslint/explicit-member-accessibility': [
       'error',
       { accessibility: 'no-public' },
@@ -158,7 +160,6 @@ export = {
       'error',
       { allowWithDecorator: true },
     ],
-    '@typescript-eslint/no-implicit-any-catch': 'off',
     '@typescript-eslint/no-misused-promises': [
       'error',
       { checksVoidReturn: false },
@@ -166,7 +167,6 @@ export = {
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
-    '@typescript-eslint/no-unused-vars-experimental': 'off',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off',
     '@typescript-eslint/promise-function-async': [
       'error',
