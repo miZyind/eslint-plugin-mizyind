@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-mizyind",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "This package provides miZyind's custom lint.",
   "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
   "author": "miZyind <mizyind@gmail.com>",
