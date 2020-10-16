@@ -1,5 +1,11 @@
 export = {
-  extends: './configs/recommended',
+  settings: { react: { version: 'detect' } },
+  extends: [
+    './configs/base',
+    'plugin:react/all',
+    'prettier/react',
+    'plugin:react-hooks/recommended',
+  ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-interface': [
@@ -17,5 +23,7 @@ export = {
     'react/react-in-jsx-scope': 'off',
     // Unnecessary while using TypeScript
     'react/require-default-props': 'off',
+    // Verify the list of the dependencies for Hooks like useEffect and similar
+    'react-hooks/exhaustive-deps': 'error',
   },
 };

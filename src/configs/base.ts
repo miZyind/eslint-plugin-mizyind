@@ -1,4 +1,15 @@
 export = {
+  env: { node: true },
+  parserOptions: {
+    project: 'tsconfig.json',
+  },
+  plugins: ['mizyind'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/all',
+    'prettier/@typescript-eslint',
+  ],
   rules: {
     /* Custom */
     'mizyind/filename': 'error',

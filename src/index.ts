@@ -1,11 +1,5 @@
+import base from './configs/base';
 import react from './configs/react';
-import recommended from './configs/recommended';
 import rules from './rules';
 
-export = {
-  rules,
-  configs: {
-    react,
-    recommended,
-  },
-};
+export = { rules, configs: { base, react } };
