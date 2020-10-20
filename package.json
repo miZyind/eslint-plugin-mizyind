@@ -2,30 +2,19 @@
   "name": "eslint-plugin-mizyind",
   "version": "2.0.1",
   "description": "This package provides miZyind's custom lint.",
-  "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
   "author": "miZyind <mizyind@gmail.com>",
   "license": "MIT",
+  "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
   "homepage": "https://github.com/miZyind/eslint-plugin-mizyind#readme",
-  "bugs": {
-    "url": "https://github.com/miZyind/eslint-plugin-mizyind/issues"
+  "bugs": "https://github.com/miZyind/eslint-plugin-mizyind/issues",
+  "main": "lib",
+  "engines": {
+    "node": ">=12"
   },
   "scripts": {
-    "prepare": "yarn build",
     "build": "rimraf lib && tsc --build tsconfig.base.json",
     "lint": "eslint \"src/**/*.ts\" --max-warnings 0",
     "test": "jest"
-  },
-  "main": "lib",
-  "files": [
-    "docs",
-    "lib"
-  ],
-  "keywords": [
-    "eslint",
-    "eslintplugin"
-  ],
-  "engines": {
-    "node": ">=12"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.4.1",
@@ -66,5 +55,13 @@
     "hooks": {
       "pre-commit": "yarn lint"
     }
-  }
+  },
+  "files": [
+    "docs",
+    "lib"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintplugin"
+  ]
 }
