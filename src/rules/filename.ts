@@ -87,7 +87,7 @@ export default createRule({
               isValidPrefix && isValidSuffix && suffix === standardDirSuffix;
 
             if (!isValid) {
-              return context.report({
+              context.report({
                 node,
                 messageId: Message.DoesNotMatchStandard,
                 data: {
@@ -95,12 +95,14 @@ export default createRule({
                   standard: `${standardPrefix}.${standardDirSuffix}${ext}`,
                 },
               });
+
+              return;
             }
           }
         }
 
         if (isValidPrefix && !isValidSuffix) {
-          return context.report({
+          context.report({
             node,
             messageId: Message.DoesNotMatchStandard,
             data: {
@@ -108,10 +110,12 @@ export default createRule({
               standard: `${standardPrefix}.${standardSuffix}${ext}`,
             },
           });
+
+          return;
         }
 
         if (!isValidPrefix && hasSuffix) {
-          return context.report({
+          context.report({
             node,
             messageId: Message.DoesNotMatchStandard,
             data: {
@@ -119,10 +123,12 @@ export default createRule({
               standard: `${standardPrefix}.${standardSuffix}${ext}`,
             },
           });
+
+          return;
         }
 
         if (!isValidPrefix && !hasSuffix) {
-          return context.report({
+          context.report({
             node,
             messageId: Message.DoesNotMatchStandard,
             data: {
