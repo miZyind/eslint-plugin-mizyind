@@ -194,6 +194,12 @@ export = {
       { allowNumber: true, allowNullish: true },
     ],
     '@typescript-eslint/no-invalid-void-type': 'off',
+    '@typescript-eslint/no-confusing-void-expression': [
+      'error',
+      {
+        ignoreArrowShorthand: true,
+      },
+    ],
     /* TypeScript Extension Rules */
     '@typescript-eslint/no-magic-numbers': [
       'error',
