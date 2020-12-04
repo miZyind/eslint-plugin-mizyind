@@ -15,7 +15,7 @@ export = {
     'mizyind/filename': 'error',
     /* Possible Errors [https://eslint.org/docs/rules/#possible-errors] */
     'no-await-in-loop': 'error',
-    'no-console': 'warn',
+    'no-console': ['warn', { allow: ['error'] }],
     'no-template-curly-in-string': 'error',
     'require-atomic-updates': 'error',
     /* Best Practices [https://eslint.org/docs/rules/#best-practices] */
