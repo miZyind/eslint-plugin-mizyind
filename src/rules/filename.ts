@@ -52,7 +52,9 @@ export default createRule({
       // NestJS
       { name: 'entities', suffix: 'entity' },
       { name: 'dtos', suffix: 'dto' },
+      { name: 'guards', suffix: 'guard' },
       { name: 'responses', suffix: 'response' },
+      { name: 'strategies', suffix: 'strategy' },
     ];
 
     return {

@@ -15,9 +15,11 @@ tester.run('filename', rule, {
     { code, filename: 'foo.error.js' },
     { code, filename: '/entites/foo.entity.js' },
     { code, filename: '/dtos/foo.dto.js' },
+    { code, filename: '/guards/foo.guard.js' },
     { code, filename: '/responses/foo.response.js' },
-    { code, filename: '/pages/_app.js' },
-    { code, filename: '/pages/_document.js' },
+    { code, filename: '/strategies/foo.strategy.js' },
+    { code, filename: '/pages/_app.jsx' },
+    { code, filename: '/pages/_document.jsx' },
     { code, filename: '/configs/e2e-test.js' },
     { code, filename: '/configs/e2e-e2e-test.js' },
   ],
@@ -67,11 +69,61 @@ tester.run('filename', rule, {
     },
     {
       code,
-      filename: '/components/_app.js',
+      filename: '/dtos/foo.js',
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: '_app.js', standard: 'app.js' },
+          data: { original: 'foo.js', standard: 'foo.dto.js' },
+        },
+      ],
+    },
+    {
+      code,
+      filename: '/guards/foo.js',
+      errors: [
+        {
+          messageId: Message.DoesNotMatchStandard,
+          data: { original: 'foo.js', standard: 'foo.guard.js' },
+        },
+      ],
+    },
+    {
+      code,
+      filename: '/responses/foo.js',
+      errors: [
+        {
+          messageId: Message.DoesNotMatchStandard,
+          data: { original: 'foo.js', standard: 'foo.response.js' },
+        },
+      ],
+    },
+    {
+      code,
+      filename: '/strategies/foo.js',
+      errors: [
+        {
+          messageId: Message.DoesNotMatchStandard,
+          data: { original: 'foo.js', standard: 'foo.strategy.js' },
+        },
+      ],
+    },
+    {
+      code,
+      filename: '/components/_app.jsx',
+      errors: [
+        {
+          messageId: Message.DoesNotMatchStandard,
+          data: { original: '_app.jsx', standard: 'app.jsx' },
+        },
+      ],
+    },
+    {
+      code,
+      filename: '/components/_document.jsx',
+      errors: [
+        {
+          messageId: Message.DoesNotMatchStandard,
+          data: { original: '_document.jsx', standard: 'document.jsx' },
         },
       ],
     },
