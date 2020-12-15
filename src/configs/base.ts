@@ -178,6 +178,7 @@ export = {
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/non-nullable-type-assertion-style': 'off',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off',
     '@typescript-eslint/promise-function-async': [
       'error',
