@@ -15,6 +15,7 @@ export = {
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     // Unnecessary
     'react/sort-comp': 'off',
+    'react/jsx-newline': 'off',
     'react/jsx-sort-props': 'off',
     'react/require-optimization': 'off',
     'react/forbid-component-props': 'off',
