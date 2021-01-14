@@ -1,3 +1,3 @@
-export function hasValue<T>(obj: T | null | undefined | void): obj is T {
+export function hasValue<T>(obj: T | void | null | undefined): obj is T {
   return typeof obj !== 'undefined' && obj !== null;
 }
