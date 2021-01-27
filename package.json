@@ -9,7 +9,7 @@
   "bugs": "https://github.com/miZyind/eslint-plugin-mizyind/issues",
   "main": "lib",
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "scripts": {
     "build": "rimraf lib && tsc --build tsconfig.base.json",
