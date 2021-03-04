@@ -6,9 +6,8 @@ export = {
   plugins: ['mizyind'],
   extends: [
     'eslint:recommended',
-    'plugin:prettier/recommended',
     'plugin:@typescript-eslint/all',
-    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
   rules: {
     /* Custom */
