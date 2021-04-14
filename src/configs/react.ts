@@ -1,10 +1,11 @@
 export = {
   settings: { react: { version: 'detect' } },
   extends: [
-    './configs/base',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/all',
     'plugin:react/all',
-    'prettier/react',
     'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
   ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
