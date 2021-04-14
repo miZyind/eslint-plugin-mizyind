@@ -52,11 +52,6 @@
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
   "files": [
     "docs",
     "lib"
