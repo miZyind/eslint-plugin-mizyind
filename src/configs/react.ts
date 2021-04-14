@@ -1,8 +1,7 @@
 export = {
   settings: { react: { version: 'detect' } },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/all',
+    './configs/base',
     'plugin:react/all',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
