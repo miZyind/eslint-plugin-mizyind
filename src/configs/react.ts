@@ -26,5 +26,7 @@ export = {
     'react/require-default-props': 'off',
     // Verify the list of the dependencies for Hooks like useEffect and similar
     'react-hooks/exhaustive-deps': 'error',
+    // Context API supports
+    'react/jsx-max-depth': ['error', { max: 3 }],
   },
 };
