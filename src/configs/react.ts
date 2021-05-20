@@ -17,6 +17,7 @@ export = {
     'react/sort-comp': 'off',
     'react/jsx-newline': 'off',
     'react/jsx-sort-props': 'off',
+    'react/jsx-no-literals': 'off',
     'react/require-optimization': 'off',
     'react/forbid-component-props': 'off',
     'react/jsx-props-no-spreading': 'off',
