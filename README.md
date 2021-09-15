@@ -10,57 +10,33 @@
 
 This package provides miZyind's custom lint rules and tools.
 
-## 🔮 Base Usage
+## 🔮 Installation
 
-Install `eslint-plugin-mizyind` package only:
 ```bash
-$ npm install eslint-plugin-mizyind --save-dev
-
-OR
-
-$ yarn add eslint-plugin-mizyind -D
+yarn add eslint-plugin-mizyind -D
 ```
 
 Add corresponding config to the extends section of your ESLint configuration:
+
 ```json
 {
-  "extends": [
-    "plugin:mizyind/base"
-  ]
+  "extends": ["plugin:mizyind/base"]
 }
 ```
 
-## 🔮 React Usage
+For NextJS:
 
-Install all dependencies:
-```bash
-$ npm install eslint-plugin-react \
-              eslint-plugin-react-hooks \
-              eslint-plugin-mizyind \
-              --save-dev
-
-OR
-
-$ yarn add eslint-plugin-react \
-           eslint-plugin-react-hooks \
-           eslint-plugin-mizyind \
-           -D
-```
-
-Add corresponding config to the extends section of your ESLint configuration:
 ```json
 {
-  "extends": [
-    "plugin:mizyind/react"
-  ]
+  "extends": ["plugin:mizyind/next"]
 }
 ```
 
 ## 📜 Supported Rules
 
-| Name                                           | Description                        |
-|------------------------------------------------|------------------------------------|
-| [`mizyind/filename`](docs/rules/filename.md)   | Enforces files' naming conventions |
+| Name                                         | Description                        |
+| -------------------------------------------- | ---------------------------------- |
+| [`mizyind/filename`](docs/rules/filename.md) | Enforces files' naming conventions |
 
 ## 🖋 Author
 
