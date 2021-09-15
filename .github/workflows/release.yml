@@ -1,7 +1,10 @@
-name: Dry Run
-on: workflow_dispatch
+name: Release
+on:
+  push:
+    branches:
+      - master
 jobs:
-  main:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,7 +15,7 @@ jobs:
       - run: yarn
       - run: yarn test
       - run: yarn build
-      - run: yarn semantic-release --dry-run
+      - run: yarn semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
