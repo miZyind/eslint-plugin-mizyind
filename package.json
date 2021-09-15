@@ -15,32 +15,39 @@
     "prepare": "husky install",
     "build": "rimraf lib && tsc --build tsconfig.base.json",
     "lint": "eslint \"src/**/*.ts\" --max-warnings 0",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/experimental-utils": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
-    "eslint": "^7.26.0",
+    "@next/eslint-plugin-next": "^11.1.2",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/experimental-utils": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "lodash.kebabcase": "^4.1.1",
-    "prettier": "^2.3.0",
-    "tslib": "^2.2.0"
+    "prettier": "^2.4.0",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@types/jest": "^26.0.23",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@types/jest": "^27.0.1",
     "@types/lodash.kebabcase": "^4.1.6",
-    "@types/node": "^15.3.1",
-    "eslint-plugin-mizyind": "2.3.2",
-    "husky": "^6.0.0",
-    "jest": "^26.6.3",
-    "lint-staged": "^11.0.0",
+    "@types/node": "^16.9.1",
+    "eslint-plugin-mizyind": "file:.",
+    "husky": "^7.0.2",
+    "jest": "^27.2.0",
+    "lint-staged": "^11.1.2",
     "rimraf": "^3.0.2",
-    "ts-jest": "^26.5.6",
-    "typescript": "^4.2.4"
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3",
+    "semantic-release": "^17.4.7"
   },
   "eslintConfig": {
     "extends": [
