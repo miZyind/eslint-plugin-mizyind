@@ -1,9 +1,14 @@
 export = {
-  settings: { react: { version: 'detect' } },
+  env: { node: true, browser: true },
+  settings: {
+    react: { version: 'detect' },
+    'import/resolver': { node: {}, typescript: { alwaysTryTypes: true } },
+  },
   extends: [
     './configs/base',
     'plugin:react/all',
     'plugin:react-hooks/recommended',
+    'plugin:@next/next/core-web-vitals',
     'plugin:prettier/recommended',
   ],
   rules: {
@@ -29,5 +34,18 @@ export = {
     'react-hooks/exhaustive-deps': 'error',
     // Context API supports
     'react/jsx-max-depth': ['error', { max: 3 }],
+    // NextJS strict mode
+    '@next/next/no-css-tags': 'error',
+    '@next/next/no-sync-scripts': 'error',
+    '@next/next/no-html-link-for-pages': 'error',
+    '@next/next/no-img-element': 'error',
+    '@next/next/no-unwanted-polyfillio': 'error',
+    '@next/next/no-page-custom-font': 'error',
+    '@next/next/no-title-in-document-head': 'error',
+    '@next/next/google-font-display': 'error',
+    '@next/next/google-font-preconnect': 'error',
+    '@next/next/link-passhref': 'error',
+    '@next/next/next-script-for-ga': 'error',
+    '@next/next/no-typos': 'error',
   },
 };

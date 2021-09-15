@@ -1,12 +1,15 @@
 export = {
   env: { node: true },
-  parserOptions: {
-    project: 'tsconfig.json',
+  settings: {
+    'import/resolver': { node: {}, typescript: { alwaysTryTypes: true } },
   },
+  parserOptions: { project: 'tsconfig.json' },
   plugins: ['mizyind'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/all',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:prettier/recommended',
   ],
   rules: {

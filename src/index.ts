@@ -1,5 +1,5 @@
 import base from './configs/base';
-import react from './configs/react';
+import next from './configs/next';
 import rules from './rules';
 
-export = { rules, configs: { base, react } };
+export = { rules, configs: { base, next } };
