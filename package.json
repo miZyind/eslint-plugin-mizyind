@@ -9,7 +9,7 @@
   "bugs": "https://github.com/miZyind/eslint-plugin-mizyind/issues",
   "main": "lib",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "scripts": {
     "prepare": "husky install",
