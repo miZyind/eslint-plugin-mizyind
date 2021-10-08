@@ -2,9 +2,9 @@
   "name": "eslint-plugin-mizyind",
   "version": "0.0.0-development",
   "description": "This package provides miZyind's custom lint.",
+  "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
   "author": "miZyind <mizyind@gmail.com>",
   "license": "MIT",
-  "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
   "homepage": "https://github.com/miZyind/eslint-plugin-mizyind#readme",
   "bugs": "https://github.com/miZyind/eslint-plugin-mizyind/issues",
   "main": "lib",
@@ -20,35 +20,43 @@
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^11.1.2",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-    "@typescript-eslint/experimental-utils": "^4.31.1",
-    "@typescript-eslint/parser": "^4.31.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/experimental-utils": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "lodash.kebabcase": "^4.1.1",
-    "prettier": "^2.4.0",
+    "prettier": "^2.4.1",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "@types/jest": "^27.0.1",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@types/jest": "^27.0.2",
     "@types/lodash.kebabcase": "^4.1.6",
-    "@types/node": "^16.9.1",
+    "@types/node": "^16.10.3",
     "eslint-plugin-mizyind": "file:.",
     "husky": "^7.0.2",
-    "jest": "^27.2.0",
-    "lint-staged": "^11.1.2",
+    "jest": "^27.2.4",
+    "lint-staged": "^11.2.0",
     "rimraf": "^3.0.2",
+    "semantic-release": "^18.0.0",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.4.3",
-    "semantic-release": "^17.4.7"
+    "typescript": "^4.4.3"
   },
+  "files": [
+    "docs",
+    "lib"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintplugin"
+  ],
   "eslintConfig": {
     "extends": [
       "plugin:mizyind/base"
@@ -62,14 +70,6 @@
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
-  "files": [
-    "docs",
-    "lib"
-  ],
-  "keywords": [
-    "eslint",
-    "eslintplugin"
-  ],
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --max-warnings 0"
