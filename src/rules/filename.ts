@@ -33,7 +33,6 @@ export default createRule({
   meta: {
     type: 'problem',
     docs: {
-      category: 'Possible Errors',
       description: `Enforces files' naming conventions`,
       recommended: 'error',
     },
