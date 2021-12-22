@@ -1,4 +1,5 @@
 export = {
+  env: { 'react-native/react-native': true },
   settings: {
     react: { version: 'detect' },
     'import/resolver': { node: {}, typescript: { alwaysTryTypes: true } },
@@ -33,7 +34,8 @@ export = {
     'react-hooks/exhaustive-deps': 'error',
     // Context API supports
     'react/jsx-max-depth': ['error', { max: 3 }],
-    // React Native
+    // Unnecessary for React Native
+    'import/namespace': 'off',
     'react-native/no-unused-styles': 'off',
   },
 };
