@@ -36,6 +36,6 @@ export = {
     'react/jsx-max-depth': ['error', { max: 3 }],
     // Unnecessary for React Native
     'import/namespace': 'off',
-    'react-native/no-unused-styles': 'off',
+    'react-native/sort-styles': 'off',
   },
 };
