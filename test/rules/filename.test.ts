@@ -22,6 +22,8 @@ tester.run('filename', rule, {
     { code, filename: '/pages/_document.jsx' },
     { code, filename: '/configs/e2e-test.js' },
     { code, filename: '/configs/e2e-e2e-test.js' },
+    { code, filename: 'i18n.js' },
+    { code, filename: '/i18n/en-US.js' },
   ],
   invalid: [
     {
@@ -124,6 +126,16 @@ tester.run('filename', rule, {
         {
           messageId: Message.DoesNotMatchStandard,
           data: { original: '_document.jsx', standard: 'document.jsx' },
+        },
+      ],
+    },
+    {
+      code,
+      filename: '/i18n/en-us.js',
+      errors: [
+        {
+          messageId: Message.DoesNotMatchLanguageCode,
+          data: { original: 'en-us' },
         },
       ],
     },
