@@ -48,9 +48,9 @@ export default createRule({
       { dir: 'strategies', standard: 'strategy' },
     ].find((rule) => rule.dir === dir);
     const isAllowed = [
-      '/pages/_app.*',
-      '/pages/_document.*',
-      '/pages/**/\\[id\\].*',
+      '**/pages/_app.*',
+      '**/pages/_document.*',
+      '**/pages/**/\\[id\\].*',
     ].some((pattern) => minimatch(path, pattern));
     const isValidPrefix = prefix === standardPrefix;
     const isValidSuffix = !requiredSuffix || suffix === requiredSuffix.standard;
