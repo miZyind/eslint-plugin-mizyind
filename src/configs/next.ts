@@ -33,7 +33,7 @@ export = {
     // Verify the list of the dependencies for Hooks like useEffect and similar
     'react-hooks/exhaustive-deps': 'error',
     // Context API supports
-    'react/jsx-max-depth': ['error', { max: 3 }],
+    'react/jsx-max-depth': ['error', { max: 5 }],
     // NextJS strict mode
     '@next/next/no-css-tags': 'error',
     '@next/next/no-sync-scripts': 'error',

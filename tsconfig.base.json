@@ -10,6 +10,7 @@
     "rootDir": "src",
     "outDir": "lib",
     "removeComments": true,
+    "lib": ["ES2021.String"],
     "target": "ES5",
     /* Strict Checks */
     "strict": true,

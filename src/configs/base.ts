@@ -192,6 +192,10 @@ export = {
       },
     ],
     '@typescript-eslint/typedef': 'off',
+    '@typescript-eslint/no-redeclare': [
+      'error',
+      { ignoreDeclarationMerge: true },
+    ],
     '@typescript-eslint/restrict-template-expressions': [
       'error',
       { allowNumber: true, allowNullish: true },
@@ -199,9 +203,7 @@ export = {
     '@typescript-eslint/no-invalid-void-type': 'off',
     '@typescript-eslint/no-confusing-void-expression': [
       'error',
-      {
-        ignoreArrowShorthand: true,
-      },
+      { ignoreArrowShorthand: true },
     ],
     /* TypeScript Extension Rules */
     '@typescript-eslint/no-magic-numbers': [

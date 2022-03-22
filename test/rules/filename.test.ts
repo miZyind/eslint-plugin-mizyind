@@ -5,7 +5,6 @@ import rule, { Message } from '../../src/rules/filename';
 const tester = new ESLintUtils.RuleTester({
   parser: '@typescript-eslint/parser',
 });
-
 const code = 'foo()';
 
 tester.run('filename', rule, {
@@ -13,6 +12,8 @@ tester.run('filename', rule, {
     { code, filename: 'foo.js' },
     { code, filename: 'foo.constant.js' },
     { code, filename: 'foo.error.js' },
+    { code, filename: 'i18n.js' },
+    { code, filename: 'e2e-test.js' },
     { code, filename: '/entites/foo.entity.js' },
     { code, filename: '/dtos/foo.dto.js' },
     { code, filename: '/guards/foo.guard.js' },
@@ -20,9 +21,7 @@ tester.run('filename', rule, {
     { code, filename: '/strategies/foo.strategy.js' },
     { code, filename: '/pages/_app.jsx' },
     { code, filename: '/pages/_document.jsx' },
-    { code, filename: '/configs/e2e-test.js' },
-    { code, filename: '/configs/e2e-e2e-test.js' },
-    { code, filename: 'i18n.js' },
+    { code, filename: '/pages/user/[id].jsx' },
     { code, filename: '/i18n/en-US.js' },
   ],
   invalid: [
@@ -32,7 +31,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: 'fooBar.js', standard: 'foo-bar.js' },
+          data: { filename: 'fooBar.js', standard: 'foo-bar.js' },
         },
       ],
     },
@@ -43,7 +42,7 @@ tester.run('filename', rule, {
         {
           messageId: Message.DoesNotMatchStandard,
           data: {
-            original: 'fooBar.constant.js',
+            filename: 'fooBar.constant.js',
             standard: 'foo-bar.constant.js',
           },
         },
@@ -55,7 +54,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: 'fooBar.error.js', standard: 'foo-bar.error.js' },
+          data: { filename: 'fooBar.error.js', standard: 'foo-bar.error.js' },
         },
       ],
     },
@@ -65,7 +64,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: 'foo.js', standard: 'foo.entity.js' },
+          data: { filename: 'foo.js', standard: 'foo.entity.js' },
         },
       ],
     },
@@ -75,7 +74,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: 'foo.js', standard: 'foo.dto.js' },
+          data: { filename: 'foo.js', standard: 'foo.dto.js' },
         },
       ],
     },
@@ -85,7 +84,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: 'foo.js', standard: 'foo.guard.js' },
+          data: { filename: 'foo.js', standard: 'foo.guard.js' },
         },
       ],
     },
@@ -95,7 +94,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: 'foo.js', standard: 'foo.response.js' },
+          data: { filename: 'foo.js', standard: 'foo.response.js' },
         },
       ],
     },
@@ -105,7 +104,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: 'foo.js', standard: 'foo.strategy.js' },
+          data: { filename: 'foo.js', standard: 'foo.strategy.js' },
         },
       ],
     },
@@ -115,7 +114,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: '_app.jsx', standard: 'app.jsx' },
+          data: { filename: '_app.jsx', standard: 'app.jsx' },
         },
       ],
     },
@@ -125,7 +124,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchStandard,
-          data: { original: '_document.jsx', standard: 'document.jsx' },
+          data: { filename: '_document.jsx', standard: 'document.jsx' },
         },
       ],
     },
@@ -135,7 +134,7 @@ tester.run('filename', rule, {
       errors: [
         {
           messageId: Message.DoesNotMatchLanguageCode,
-          data: { original: 'en-us' },
+          data: { filename: 'en-us' },
         },
       ],
     },
