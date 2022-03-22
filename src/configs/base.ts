@@ -246,6 +246,10 @@ export = {
         format: null,
       },
       {
+        selector: 'objectLiteralProperty',
+        format: null,
+      },
+      {
         selector: 'enumMember',
         format: ['PascalCase'],
       },
