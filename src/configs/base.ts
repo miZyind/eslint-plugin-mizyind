@@ -53,7 +53,7 @@ export = {
     'max-lines': 'off', // Unnecessary, too strict
     'max-lines-per-function': 'off', // Unnecessary, too strict
     'max-nested-callbacks': 'error',
-    'max-params': 'error',
+    'max-params': 'off', // Unnecessary, too strict
     'max-statements': 'off', // Unnecessary, too strict
     'multiline-comment-style': 'error',
     'new-cap': 'off', // @typescript-eslint/naming-convention
