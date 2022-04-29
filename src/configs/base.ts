@@ -177,7 +177,12 @@ export = {
       'error',
       { checksVoidReturn: false },
     ],
-    '@typescript-eslint/no-parameter-properties': 'off',
+    '@typescript-eslint/parameter-properties': [
+      'error',
+      {
+        prefer: 'parameter-property',
+      },
+    ],
     '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/non-nullable-type-assertion-style': 'off',
@@ -205,7 +210,6 @@ export = {
       'error',
       { ignoreArrowShorthand: true },
     ],
-    /* TypeScript Extension Rules */
     '@typescript-eslint/no-magic-numbers': [
       'error',
       {
@@ -214,7 +218,6 @@ export = {
         ignoreReadonlyClassProperties: true,
       },
     ],
-    /* TypeScript Naming Convention */
     '@typescript-eslint/naming-convention': [
       'error',
       {
