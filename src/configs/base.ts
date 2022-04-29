@@ -48,15 +48,15 @@ export = {
     'id-length': 'off', // Unnecessary, too strict
     'id-match': 'off', // @typescript-eslint/naming-convention
     'init-declarations': 'off', // @typescript-eslint/init-declarations
-    'max-classes-per-file': 'error',
+    'max-classes-per-file': 'off', // Unnecessary, too strict
     'max-depth': 'error',
     'max-lines': 'off', // Unnecessary, too strict
     'max-lines-per-function': 'off', // Unnecessary, too strict
     'max-nested-callbacks': 'error',
     'max-params': 'error',
-    'max-statements': 'error',
+    'max-statements': 'off', // Unnecessary, too strict
     'multiline-comment-style': 'error',
-    'new-cap': 'error', // @typescript-eslint/naming-convention
+    'new-cap': 'off', // @typescript-eslint/naming-convention
     'no-alert': 'error',
     'no-array-constructor': 'error',
     'no-bitwise': 'error',
