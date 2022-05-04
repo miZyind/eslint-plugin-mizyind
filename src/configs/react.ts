@@ -3,11 +3,7 @@ export = {
     react: { version: 'detect' },
     'import/resolver': { node: {}, typescript: { alwaysTryTypes: true } },
   },
-  extends: [
-    './configs/base',
-    'plugin:react/all',
-    'plugin:react-hooks/recommended',
-  ],
+  extends: ['plugin:react/all', 'plugin:react-hooks/recommended'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off', // Unnecessary for React
     '@typescript-eslint/no-empty-interface': [

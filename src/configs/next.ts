@@ -1,6 +1,7 @@
 export = {
   env: { node: true, browser: true },
   extends: [
+    './configs/base',
     './configs/react',
     'plugin:@next/next/recommended',
     'plugin:prettier/recommended',

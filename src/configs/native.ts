@@ -1,6 +1,7 @@
 export = {
   env: { 'react-native/react-native': true },
   extends: [
+    './configs/base',
     './configs/react',
     'plugin:react-native/all',
     'plugin:prettier/recommended',
