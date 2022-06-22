@@ -10,6 +10,7 @@ export = {
       'error',
       { allowSingleExtends: true },
     ],
+    'react/prop-types': 'off', // Unnecessary for TypeScript
     'react/forbid-component-props': 'off', // Unnecessary, too strict
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/jsx-max-depth': ['error', { max: 5 }],
