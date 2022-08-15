@@ -7,6 +7,7 @@ export = {
     'plugin:prettier/recommended',
   ],
   rules: {
+    'react/jsx-newline': ['error', { prevent: true }], // Override Prettier's default behavior
     '@next/next/no-css-tags': 'error',
     '@next/next/no-sync-scripts': 'error',
     '@next/next/no-html-link-for-pages': 'error',

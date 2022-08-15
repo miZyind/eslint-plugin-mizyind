@@ -184,7 +184,7 @@ export = {
     'line-comment-position': 'off', // Unnecessary, too strict
     'linebreak-style': 'off', // Unnecessary for Prettier
     'lines-around-comment': 'off', // Unnecessary for Prettier
-    'lines-between-class-members': 'error',
+    'lines-between-class-members': 'off', // @typescript-eslint/lines-between-class-members
     'max-len': 'off', // Unnecessary for Prettier
     'max-statements-per-line': 'off', // Unnecessary, too strict
     'multiline-ternary': 'off', // Unnecessary for Prettier
@@ -204,6 +204,11 @@ export = {
     'padded-blocks': 'off', // Unnecessary for Prettier
     'padding-line-between-statements': [
       'error',
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: 'class',
+      },
       {
         blankLine: 'always',
         prev: '*',
@@ -283,6 +288,11 @@ export = {
       { accessibility: 'no-public' },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off', // @typescript-eslint/explicit-function-return-type
+    '@typescript-eslint/lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterOverload: true },
+    ],
     '@typescript-eslint/naming-convention': [
       'error',
       {
