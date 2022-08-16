@@ -1,3 +1,5 @@
+const custom = { regex: 'Id$', match: false };
+
 export = {
   env: { node: true },
   settings: {
@@ -62,7 +64,7 @@ export = {
     'no-bitwise': 'error',
     'no-caller': 'error',
     'no-confusing-arrow': 'off', // Unnecessary for Prettier
-    'no-console': ['warn', { allow: ['error'] }],
+    'no-console': ['warn', { allow: ['error', 'time', 'timeEnd'] }],
     'no-continue': 'error',
     'no-div-regex': 'error',
     'no-else-return': 'error',
@@ -304,23 +306,27 @@ export = {
       {
         selector: 'variable',
         format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        custom,
       },
       {
         selector: 'function',
         format: ['camelCase', 'PascalCase'],
+        custom,
       },
       {
         selector: 'parameter',
         format: ['camelCase', 'PascalCase'],
         leadingUnderscore: 'allow',
+        custom,
       },
       {
         selector: 'property',
         format: ['camelCase', 'PascalCase', 'snake_case', 'UPPER_CASE'],
+        custom,
       },
       {
         selector: 'property',
-        filter: '^__html$',
+        filter: '^(__html|x-forwarded-for|cognito:groups)$',
         format: null,
       },
       {
@@ -330,26 +336,32 @@ export = {
       {
         selector: 'enumMember',
         format: ['PascalCase'],
+        custom,
       },
       {
         selector: 'class',
         format: ['PascalCase'],
+        custom,
       },
       {
         selector: 'interface',
         format: ['PascalCase'],
+        custom,
       },
       {
         selector: 'typeAlias',
         format: ['PascalCase'],
+        custom,
       },
       {
         selector: 'enum',
         format: ['PascalCase'],
+        custom,
       },
       {
         selector: 'typeParameter',
         format: ['PascalCase'],
+        custom,
       },
     ],
     '@typescript-eslint/no-confusing-void-expression': [
