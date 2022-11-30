@@ -252,34 +252,7 @@ export = {
     /* TypeScript Supported Rules [https://typescript-eslint.io/rules/#supported-rules] */
     '@typescript-eslint/ban-types': [
       'error',
-      {
-        types: {
-          String: {
-            message: 'Use string instead',
-            fixWith: 'string',
-          },
-          Boolean: {
-            message: 'Use boolean instead',
-            fixWith: 'boolean',
-          },
-          Number: {
-            message: 'Use number instead',
-            fixWith: 'number',
-          },
-          Symbol: {
-            message: 'Use symbol instead',
-            fixWith: 'symbol',
-          },
-          Object: {
-            message:
-              'The `Object` type actually means "any non-nullish value", so it is marginally better than `unknown`.',
-          },
-          '{}': {
-            message: '`{}` actually means "any non-nullish value".',
-          },
-        },
-        extendDefaults: false,
-      },
+      { types: { Function: false }, extendDefaults: true },
     ],
     '@typescript-eslint/consistent-type-imports': [
       'error',
