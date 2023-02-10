@@ -384,5 +384,6 @@ export = {
       { allowNumber: true, allowNullish: true },
     ],
     '@typescript-eslint/typedef': 'off', // Unnecessary for stricter TypeScript compiler options
+    '@typescript-eslint/key-spacing': 'off', // Unnecessary for Prettier
   },
 };
