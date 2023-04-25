@@ -1,5 +1,5 @@
 import kebabCase from 'lodash.kebabcase';
-import minimatch from 'minimatch';
+import { minimatch } from 'minimatch';
 import { basename, dirname, extname } from 'path';
 
 import { createRule } from '../utils/create-rule';

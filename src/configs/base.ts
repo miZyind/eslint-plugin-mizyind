@@ -384,5 +384,6 @@ export = {
       { allowNumber: true, allowNullish: true },
     ],
     '@typescript-eslint/typedef': 'off', // Unnecessary for stricter TypeScript compiler options
+    '@typescript-eslint/no-unsafe-enum-comparison': 'off', // Unnecessary for stricter TypeScript compiler options
   },
 };
