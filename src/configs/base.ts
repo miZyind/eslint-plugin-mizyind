@@ -249,6 +249,8 @@ export = {
     'wrap-iife': 'off', // Unnecessary for Prettier
     'wrap-regex': 'off', // Unnecessary for Prettier
     'yield-star-spacing': 'off', // Unnecessary for Prettier
+    /* Import Rules [https://github.com/import-js/eslint-plugin-import] */
+    'import/no-named-as-default': 'off',
     /* TypeScript Supported Rules [https://typescript-eslint.io/rules/#supported-rules] */
     '@typescript-eslint/ban-types': [
       'error',
