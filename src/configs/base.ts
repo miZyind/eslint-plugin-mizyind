@@ -79,7 +79,7 @@ export = {
     'no-implicit-globals': 'error',
     'no-implied-eval': 'off', // @typescript-eslint/no-implied-eval
     'no-inline-comments': 'off', // Unnecessary, too strict
-    'o-invalid-this': 'off', // @typescript-eslint/no-invalid-this
+    'no-invalid-this': 'off', // @typescript-eslint/no-invalid-this
     'no-iterator': 'error',
     'no-label-var': 'error',
     'no-labels': 'error',
