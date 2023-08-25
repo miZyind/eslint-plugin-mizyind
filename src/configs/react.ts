@@ -20,6 +20,7 @@ export = {
     'react/jsx-sort-props': 'off', // Unnecessary, too strict
     'react/react-in-jsx-scope': 'off', // Unnecessary for React 17+
     'react/require-default-props': 'off', // Unnecessary for TypeScript
+    'react/prefer-read-only-props': 'off', // Unnecessary for TypeScript
     'react-hooks/exhaustive-deps': 'error',
   },
 };
