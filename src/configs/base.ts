@@ -121,7 +121,6 @@ export = {
     'no-undefined': 'error',
     'no-underscore-dangle': 'off', // Unnecessary, too strict
     'no-unneeded-ternary': 'error',
-    'no-unused-expressions': 'off', // Unnecessary, too strict
     'no-useless-call': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-concat': 'error',
