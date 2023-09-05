@@ -386,5 +386,6 @@ export = {
     ],
     '@typescript-eslint/typedef': 'off', // Unnecessary for stricter TypeScript compiler options
     '@typescript-eslint/no-unsafe-enum-comparison': 'off', // Unnecessary for stricter TypeScript compiler options
+    '@typescript-eslint/class-methods-use-this': 'off', // Unnecessary, too strict
   },
 };
