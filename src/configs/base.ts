@@ -337,6 +337,10 @@ export = {
         format: ['PascalCase'],
         custom,
       },
+      {
+        selector: 'import',
+        format: ['PascalCase', 'camelCase'],
+      },
     ],
     '@typescript-eslint/no-confusing-void-expression': [
       'error',
