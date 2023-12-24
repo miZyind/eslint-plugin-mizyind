@@ -6,9 +6,7 @@ import { createRule } from '../utils/create-rule';
 
 function getStandardPrefix(prefix: string): string {
   const mask = '0000000000';
-  const special = ['e2e', 'i18n', '[...nextauth]'].find((value) =>
-    prefix.includes(value),
-  );
+  const special = ['e2e', 'i18n'].find((value) => prefix.includes(value));
 
   return typeof special === 'string'
     ? kebabCase(prefix.replaceAll(special, mask)).replaceAll(mask, special)
@@ -53,6 +51,7 @@ export default createRule({
       '**/pages/_app.*',
       '**/pages/_document.*',
       '**/pages/**/\\[id\\].*',
+      '**/pages/api/auth/\\[...nextauth\\].*',
     ].some((pattern) => minimatch(path, pattern));
     const isValidPrefix = prefix === standardPrefix;
     const isValidSuffix = !requiredSuffix || suffix === requiredSuffix.standard;
@@ -64,7 +63,7 @@ export default createRule({
           return;
         }
         if (dir === 'i18n') {
-          if (/^[a-z]{2}-[A-Z]{2}$/gu.test(prefix)) {
+          if (/^[a-z]{2}(?<country>-[A-Z]{2})?$/gu.test(prefix)) {
             return;
           }
 

@@ -22,6 +22,8 @@ tester.run('filename', rule, {
     { code, filename: '/pages/_app.jsx' },
     { code, filename: '/pages/_document.jsx' },
     { code, filename: '/pages/user/[id].jsx' },
+    { code, filename: '/pages/api/auth/[...nextauth].jsx' },
+    { code, filename: '/i18n/en.js' },
     { code, filename: '/i18n/en-US.js' },
   ],
   invalid: [
