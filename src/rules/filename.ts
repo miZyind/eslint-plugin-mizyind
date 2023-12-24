@@ -6,7 +6,9 @@ import { createRule } from '../utils/create-rule';
 
 function getStandardPrefix(prefix: string): string {
   const mask = '0000000000';
-  const special = ['e2e', 'i18n'].find((value) => prefix.includes(value));
+  const special = ['e2e', 'i18n', '[...nextauth]'].find((value) =>
+    prefix.includes(value),
+  );
 
   return typeof special === 'string'
     ? kebabCase(prefix.replaceAll(special, mask)).replaceAll(mask, special)
