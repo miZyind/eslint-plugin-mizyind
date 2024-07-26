@@ -1,1 +1,1 @@
-module.exports = require('eslint-plugin-mizyind').configs.base;
+module.exports = require('./lib').configs.base;

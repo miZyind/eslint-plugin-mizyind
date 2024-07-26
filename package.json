@@ -37,7 +37,6 @@
     "typescript-eslint": "^7.17.0"
   },
   "devDependencies": {
-    "eslint-plugin-mizyind": "file:.",
     "jest": "^29.7.0",
     "semantic-release": "^24.0.0"
   },
