@@ -18,26 +18,30 @@ yarn add eslint-plugin-mizyind -D
 
 Add corresponding config to the extends section of your ESLint configuration:
 
-```json
-{
-  "extends": ["plugin:mizyind/base"]
-}
+```js
+// eslint.config.js
+module.exports = require('eslint-plugin-mizyind').configs.node;
 ```
 
 For ReactNative:
 
-```json
-{
-  "extends": ["plugin:mizyind/native"]
-}
+```js
+// eslint.config.js
+module.exports = require('eslint-plugin-mizyind').configs.native;
 ```
 
 For NextJS:
 
-```json
-{
-  "extends": ["plugin:mizyind/next"]
-}
+```js
+// eslint.config.js
+module.exports = require('eslint-plugin-mizyind').configs.next;
+```
+
+For TypeScript:
+
+```js
+// eslint.config.js
+module.exports = require('eslint-plugin-mizyind').configs.typescript;
 ```
 
 ## 📜 Supported Rules
