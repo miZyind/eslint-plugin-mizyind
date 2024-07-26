@@ -16,31 +16,27 @@ This package provides miZyind's custom lint rules and tools.
 yarn add eslint-plugin-mizyind -D
 ```
 
-Add corresponding config to the extends section of your ESLint configuration:
+[`eslint.config.js`](https://eslint.org/docs/latest/use/configure/configuration-files) (requires eslint >= 9)
 
 ```js
-// eslint.config.js
-module.exports = require('eslint-plugin-mizyind').configs.node;
+module.exports = require('eslint-plugin-mizyind').configs.base;
 ```
 
 For ReactNative:
 
 ```js
-// eslint.config.js
 module.exports = require('eslint-plugin-mizyind').configs.native;
 ```
 
 For NextJS:
 
 ```js
-// eslint.config.js
 module.exports = require('eslint-plugin-mizyind').configs.next;
 ```
 
 For TypeScript:
 
 ```js
-// eslint.config.js
 module.exports = require('eslint-plugin-mizyind').configs.typescript;
 ```
 
