@@ -3,54 +3,43 @@
   "version": "0.0.0-development",
   "description": "This package provides miZyind's custom lint.",
   "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
-  "author": "miZyind <mizyind@gmail.com>",
+  "author": "miZyind <mizyind.dev>",
   "license": "MIT",
   "homepage": "https://github.com/miZyind/eslint-plugin-mizyind#readme",
   "bugs": "https://github.com/miZyind/eslint-plugin-mizyind/issues",
   "main": "lib",
-  "engines": {
-    "node": ">=20"
-  },
   "scripts": {
-    "prepare": "husky install",
-    "build": "rimraf lib && tsc --build tsconfig.base.json",
-    "lint": "eslint \"src/**/*.ts\" --max-warnings 0",
+    "lint": "eslint --max-warnings 0",
     "test": "jest",
     "semantic-release": "semantic-release"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "@next/eslint-plugin-next": "^14.0.4",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/experimental-utils": "^5.62.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "eslint": "^8.56.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.7.0",
+    "@next/eslint-plugin-next": "^14.2.5",
+    "@stylistic/eslint-plugin": "^2.3.0",
+    "@stylistic/eslint-plugin-ts": "^2.3.0",
+    "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.1.2",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-import-x": "^3.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-native": "^4.1.0",
+    "globals": "^15.8.0",
     "lodash.kebabcase": "^4.1.1",
-    "minimatch": "^9.0.3",
-    "prettier": "^3.1.1",
-    "tslib": "^2.6.2"
+    "minimatch": "^10.0.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^7.17.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
-    "@types/jest": "^29.5.11",
-    "@types/lodash.kebabcase": "^4.1.9",
-    "@types/minimatch": "^5.1.2",
-    "@types/node": "^20.10.5",
     "eslint-plugin-mizyind": "file:.",
-    "husky": "^8.0.3",
     "jest": "^29.7.0",
-    "lint-staged": "^15.2.0",
-    "rimraf": "^5.0.5",
-    "semantic-release": "^22.0.12",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.3.3"
+    "semantic-release": "^24.0.0"
   },
   "files": [
     "docs",
@@ -60,41 +49,21 @@
     "eslint",
     "eslintplugin"
   ],
-  "eslintConfig": {
-    "extends": [
-      "plugin:mizyind/base"
-    ]
-  },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --max-warnings 0"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
       [
-        "@semantic-release/github",
+        "@semantic-release/npm",
         {
-          "successComment": false,
-          "failComment": false
+          "pkgRoot": "."
         }
-      ]
+      ],
+      "@semantic-release/github"
     ]
   }
 }
