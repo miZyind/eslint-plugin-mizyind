@@ -1108,7 +1108,7 @@
     eslint-visitor-keys "^4.0.0"
     espree "^10.0.1"
 
-"@stylistic/eslint-plugin-jsx@2.3.0":
+"@stylistic/eslint-plugin-jsx@2.3.0", "@stylistic/eslint-plugin-jsx@^2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@stylistic/eslint-plugin-jsx/-/eslint-plugin-jsx-2.3.0.tgz#f1a01b6dcdf3d6159727eef6ae298107facdb098"
   integrity sha512-tsQ0IEKB195H6X9A4iUSgLLLKBc8gUBWkBIU8tp1/3g2l8stu+PtMQVV/VmK1+3bem5FJCyvfcZIQ/WF1fsizA==
