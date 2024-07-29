@@ -1,4 +1,4 @@
-const rule = require('./filename');
+const rule = require('../lib/rules/filename');
 const { RuleTester } = require('eslint');
 const tester = new RuleTester();
 const code = 'foo()';

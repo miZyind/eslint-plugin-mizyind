@@ -10,7 +10,7 @@
   "main": "lib",
   "scripts": {
     "test": "jest",
-    "lint": "eslint lib --max-warnings 0",
+    "lint": "eslint --max-warnings 0",
     "semantic-release": "semantic-release"
   },
   "engines": {
