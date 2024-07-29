@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-mizyind",
   "version": "0.0.0-development",
-  "description": "This package provides miZyind's custom lint.",
+  "description": "This package provides miZyind's custom lint",
   "repository": "git@github.com:miZyind/eslint-plugin-mizyind.git",
   "author": "miZyind <mizyind.dev>",
   "license": "MIT",
@@ -9,14 +9,15 @@
   "bugs": "https://github.com/miZyind/eslint-plugin-mizyind/issues",
   "main": "lib",
   "scripts": {
-    "lint": "eslint --max-warnings 0",
     "test": "jest",
+    "lint": "eslint lib --max-warnings 0",
     "semantic-release": "semantic-release"
   },
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
+    "@eslint/compat": "^1.1.1",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.8.0",
     "@next/eslint-plugin-next": "^14.2.5",
@@ -43,7 +44,6 @@
     "semantic-release": "^24.0.0"
   },
   "files": [
-    "docs",
     "lib"
   ],
   "keywords": [
