@@ -1,1 +1,1 @@
-module.exports = require('./lib').configs.base;
+export { base as default } from './lib/index.js';

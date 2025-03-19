@@ -1,5 +1,7 @@
-const rule = require('../lib/rules/filename');
-const { RuleTester } = require('eslint');
+import { RuleTester } from 'eslint';
+
+import rule from '../lib/rules/filename.js';
+
 const tester = new RuleTester();
 const code = 'foo()';
 const Message = {

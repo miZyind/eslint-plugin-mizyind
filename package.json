@@ -8,27 +8,29 @@
   "homepage": "https://github.com/miZyind/eslint-plugin-mizyind#readme",
   "bugs": "https://github.com/miZyind/eslint-plugin-mizyind/issues",
   "main": "lib",
+  "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "lint": "eslint --max-warnings 0",
     "semantic-release": "semantic-release"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22",
+    "yarn": "1.22.22"
   },
   "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@eslint/compat": "^1.2.7",
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.22.0",
-    "@next/eslint-plugin-next": "^15.2.1",
+    "@next/eslint-plugin-next": "^15.2.3",
     "@stylistic/eslint-plugin": "^4.2.0",
     "@stylistic/eslint-plugin-jsx": "^4.2.0",
     "@stylistic/eslint-plugin-ts": "^4.2.0",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
-    "eslint-import-resolver-typescript": "^3.8.4",
-    "eslint-plugin-import-x": "^4.6.1",
+    "eslint-import-resolver-typescript": "^4.2.2",
+    "eslint-plugin-import-x": "^4.9.0",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
