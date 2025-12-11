@@ -3,18 +3,22 @@ on:
   push:
     branches:
       - master
+permissions:
+  contents: read
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
+          cache: yarn
           node-version: 24
-          cache: 'yarn'
       - run: yarn
       - run: yarn test
       - run: yarn semantic-release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
