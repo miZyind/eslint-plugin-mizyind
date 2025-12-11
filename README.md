@@ -22,12 +22,6 @@ yarn add eslint-plugin-mizyind -D
 module.exports = require('eslint-plugin-mizyind').configs.base;
 ```
 
-For ReactNative:
-
-```js
-module.exports = require('eslint-plugin-mizyind').configs.native;
-```
-
 For NextJS:
 
 ```js
