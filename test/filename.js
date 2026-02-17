@@ -1,6 +1,12 @@
 import { RuleTester } from 'eslint';
+import test from 'node:test';
 
 import rule from '../lib/rules/filename.js';
+
+RuleTester.it = test.it;
+RuleTester.itOnly = test.it.only;
+RuleTester.afterAll = test.after;
+RuleTester.describe = test.describe;
 
 const tester = new RuleTester();
 const code = 'foo()';
@@ -8,29 +14,31 @@ const Message = {
   DoesNotMatchStandard: 'DoesNotMatchStandard',
   DoesNotMatchLanguageCode: 'DoesNotMatchLanguageCode',
 };
+const filenames = [
+  'foo.js',
+  'foo.constant.js',
+  'foo.error.js',
+  'i18n.js',
+  'e2e-test.js',
+  '/entites/foo.entity.js',
+  '/dtos/foo.dto.js',
+  '/guards/foo.guard.js',
+  '/responses/foo.response.js',
+  '/strategies/foo.strategy.js',
+  '/pages/_app.jsx',
+  '/pages/_document.jsx',
+  '/pages/user/[id].jsx',
+  '/pages/api/auth/[...nextauth].jsx',
+  '/i18n/en.js',
+  '/i18n/en-US.js',
+];
 
 tester.run('filename', rule, {
-  valid: [
-    { code, filename: 'foo.js' },
-    { code, filename: 'foo.constant.js' },
-    { code, filename: 'foo.error.js' },
-    { code, filename: 'i18n.js' },
-    { code, filename: 'e2e-test.js' },
-    { code, filename: '/entites/foo.entity.js' },
-    { code, filename: '/dtos/foo.dto.js' },
-    { code, filename: '/guards/foo.guard.js' },
-    { code, filename: '/responses/foo.response.js' },
-    { code, filename: '/strategies/foo.strategy.js' },
-    { code, filename: '/pages/_app.jsx' },
-    { code, filename: '/pages/_document.jsx' },
-    { code, filename: '/pages/user/[id].jsx' },
-    { code, filename: '/pages/api/auth/[...nextauth].jsx' },
-    { code, filename: '/i18n/en.js' },
-    { code, filename: '/i18n/en-US.js' },
-  ],
+  valid: filenames.map((v) => ({ code, name: v, filename: v })),
   invalid: [
     {
       code,
+      name: 'fooBar.js',
       filename: 'fooBar.js',
       errors: [
         {
@@ -41,6 +49,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: 'fooBar.constant.js',
       filename: 'fooBar.constant.js',
       errors: [
         {
@@ -54,6 +63,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: 'fooBar.error.js',
       filename: 'fooBar.error.js',
       errors: [
         {
@@ -64,6 +74,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/entities/foo.js',
       filename: '/entities/foo.js',
       errors: [
         {
@@ -74,6 +85,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/dtos/foo.js',
       filename: '/dtos/foo.js',
       errors: [
         {
@@ -84,6 +96,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/guards/foo.js',
       filename: '/guards/foo.js',
       errors: [
         {
@@ -94,6 +107,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/responses/foo.js',
       filename: '/responses/foo.js',
       errors: [
         {
@@ -104,6 +118,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/strategies/foo.js',
       filename: '/strategies/foo.js',
       errors: [
         {
@@ -114,6 +129,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/components/_app.jsx',
       filename: '/components/_app.jsx',
       errors: [
         {
@@ -124,6 +140,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/components/_document.jsx',
       filename: '/components/_document.jsx',
       errors: [
         {
@@ -134,6 +151,7 @@ tester.run('filename', rule, {
     },
     {
       code,
+      name: '/i18n/en-us.js',
       filename: '/i18n/en-us.js',
       errors: [
         {
