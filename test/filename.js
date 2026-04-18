@@ -1,6 +1,5 @@
 import { RuleTester } from 'eslint';
 import test from 'node:test';
-
 import rule from '../lib/rules/filename.js';
 
 RuleTester.it = test.it;
