@@ -41,6 +41,10 @@
   "devDependencies": {
     "semantic-release": "^25.0.9"
   },
+  "resolutions": {
+    "eslint-plugin-react/minimatch": "^3.1.5",
+    "minimatch": "^11.0.8"
+  },
   "files": [
     "lib"
   ],
